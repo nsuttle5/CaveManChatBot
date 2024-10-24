@@ -151,7 +151,7 @@
             chatArea.scrollTop = chatArea.scrollHeight;
         }
 
-        async function getBotResponse(messageInput) {
+        async function getBotResponse(userMessage) {
             const apiKey = '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';
             const url = 'https://api.openai.com/v1/chat/completions';
         
@@ -230,7 +230,7 @@
                     model: "gpt-4o-mini",
                     messages: [
                         systemMessage,
-                        { role: "user", content: messageInput }
+                        { role: "user", content: userMessage }
                     ],
                     max_tokens: 150
                 })
