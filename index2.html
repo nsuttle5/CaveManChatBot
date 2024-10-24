@@ -136,11 +136,6 @@
 
             addUserMessage(message);
             messageInput.value = '';
-
-            // AI caveman response (for testing)
-            setTimeout(() => {
-                addCavemanResponse("Ugh! Caveman think about it...");
-            }, 1000);
         }
 
         function addUserMessage(message) {
@@ -151,7 +146,7 @@
             chatArea.scrollTop = chatArea.scrollHeight;
         }
 
-        async function getBotResponse(userMessage) {
+        async function getBotResponse(messageInput) {
             const apiKey = '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';
             const url = 'https://api.openai.com/v1/chat/completions';
         
@@ -230,7 +225,7 @@
                     model: "gpt-4o-mini",
                     messages: [
                         systemMessage,
-                        { role: "user", content: userMessage }
+                        { role: "user", content: messageInput }
                     ],
                     max_tokens: 150
                 })
