@@ -136,6 +136,9 @@
 
             addUserMessage(message);
             messageInput.value = '';
+
+            const botResponse = await getBotResponse(userMessage);
+            addMessageToChat(botResponse, 'bot');
         }
 
         function addUserMessage(message) {
