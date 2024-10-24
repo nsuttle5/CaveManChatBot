@@ -137,8 +137,12 @@
             addUserMessage(message);
             messageInput.value = '';
 
-            const botResponse = await getBotResponse(userMessage);
-            addMessageToChat(botResponse, 'bot');
+            try {
+                const cavemanResponse = await getBotResponse(message);
+                addCavemanResponse(cavemanResponse);
+            } catch (error) {
+                addCavemanResponse("Grug confused. Something went wrong.");
+            }
         }
 
         function addUserMessage(message) {
