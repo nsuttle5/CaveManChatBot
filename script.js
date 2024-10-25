@@ -32,7 +32,7 @@ async function sendMessage() {
         const cavemanResponse = await getBotResponse(message);
         addCavemanResponse(cavemanResponse);
     } catch (error) {
-        console.error("Error fetching caveman response:", error);
+        console.error("Error generating caveman response:", error);
         addCavemanResponse("Grug confused. Something went wrong.");
     }
 }
