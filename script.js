@@ -131,7 +131,7 @@ async function getBotResponse(messageInput) {
                 systemMessage,
                 { role: "user", content: messageInput }
             ],
-            max_tokens: 150
+            max_tokens: 200
         })
     });
 
