@@ -44,6 +44,7 @@ body {
     display: flex;
     align-items: flex-end;
     position: relative;
+	left: -200px;
 }
 
 .chat-container {
@@ -66,7 +67,18 @@ h1 {
     color: #8b4513;
     margin-bottom: 20px;
 }
+#caveman-gif-container {
+    width: 400px; /* Adjust to desired size */
+    height: 400px; /* Ensures the container is square */
+    margin-right: 25px; /* Adds spacing between the GIF and the chat area */
+}
 
+#caveman-gif-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps the GIF from stretching */
+    border-radius: 10px; /* Optional rounded corners */
+}
 #chat-area {
     width: 100%;
     height: 250px;
@@ -111,6 +123,7 @@ h1 {
     right: -500px;
     bottom: -50px;
 }
+
 
 .message-bubble {
     position: relative;

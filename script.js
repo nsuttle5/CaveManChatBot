@@ -28,12 +28,19 @@ async function sendMessage() {
     addUserMessage(message);
     messageInput.value = '';
 
+    // Change GIF to CavemanTalk.gif while bot is "thinking"
+    const cavemanGif = document.getElementById('caveman-gif');
+    cavemanGif.src = 'CavemanTalk.gif';
+
     try {
         const cavemanResponse = await getBotResponse(message);
         addCavemanResponse(cavemanResponse);
     } catch (error) {
         console.error("Error fetching caveman response:", error);
         addCavemanResponse("Grug confused. Something went wrong.");
+    } finally {
+        // Revert GIF back to CavemanIdle.gif after response is displayed
+        cavemanGif.src = 'CavemanIdle.gif';
     }
 }
 
